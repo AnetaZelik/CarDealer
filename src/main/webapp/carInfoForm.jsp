@@ -1,32 +1,32 @@
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Arrays" %>
-<%@ page import="pl.altkom.web.CarBean" %>
+<%@ page import="carDealer.CarBean" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Dodaj auto</title>
+    <title>Add car</title>
 </head>
 <body>
 
-<jsp:useBean id="now" class="java.util.Date" />
-<fmt:formatDate var="currentYear" value="${now}" pattern="yyyy" />
+<jsp:useBean id="now" class="java.util.Date"/>
+<fmt:formatDate var="currentYear" value="${now}" pattern="yyyy"/>
 
 <c:set var="makes" value="Fiat,Volkswagen,Ford,Volvo,Honda,Citroen"/>
 
-<jsp:useBean id="autko" class="pl.altkom.web.CarBean" scope="session"/>
+<jsp:useBean id="car" class="carDealer.CarBean" scope="session"/>
 
 <form action="checkInfoForm.jsp" method="post">
-    Marka
+    Make
     <select name="make">
         <c:forEach var="m" items="${makes}">
             <c:choose>
-                <c:when test="${m eq autko.make}">
-                    <option selected="selected"> <c:out value="${m}"/> </option>
+                <c:when test="${m eq car.make}">
+                    <option selected="selected"><c:out value="${m}"/></option>
                 </c:when>
                 <c:otherwise>
-                    <option> <c:out value="${m}"/> </option>
+                    <option><c:out value="${m}"/></option>
                 </c:otherwise>
             </c:choose>
         </c:forEach>
@@ -34,7 +34,7 @@
     <br>
     Typ
     <input type="text" name="type" value="<c:out value='${autko.type}'/>"/> <br>
-    Rok produkcji
+    Production year
 
     <select name="year">
         <c:forEach var="i" begin="0" end="49">
@@ -45,7 +45,7 @@
             >
                 <c:out value="${currentYear - i}"/></option>
             <%--            <c:choose>--%>
-            <%--                <c:when test="${currentYear - i == autko.year}">--%>
+            <%--                <c:when test="${currentYear - i == car.year}">--%>
             <%--                    <option selected="selected"><c:out value="${currentYear - i}"/></option>--%>
             <%--                </c:when>--%>
             <%--                <c:otherwise>--%>
@@ -61,28 +61,28 @@
         <%--            <% } %>--%>
         <%--        <% } %>--%>
     </select><br>
-    Przebieg
+    Distance
     <select name="distance">
         <c:forEach var="i" begin="0" end="1000000" step="100000">
-            <option <c:if test="${i == autko.distance}">
+            <option <c:if test="${i == car.distance}">
                 selected="selected"
             </c:if>><c:out value="${i}"/></option>
         </c:forEach>
     </select><br>
-    Pojemność
+    Capacity
     <select name="capacity">
         <c:forEach var="i" begin="1" end="7">
             <option
-                    <c:if test="${i == autko.capacity}">
+                    <c:if test="${i == car.capacity}">
                         selected="selected"
                     </c:if>
             >
                 <c:out value="${i}"/></option>
         </c:forEach>
     </select>
-    <input type="submit" value="Wyślij">
+    <input type="submit" value="Send">
 </form>
 
-<%@include file="footer.html"%>
+<%@include file="footer.html" %>
 </body>
 </html>

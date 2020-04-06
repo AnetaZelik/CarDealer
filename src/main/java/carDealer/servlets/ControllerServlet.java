@@ -1,6 +1,6 @@
-package pl.altkom.web.servlets;
+package carDealer.servlets;
 
-import pl.altkom.web.listeners.SessionCounter;
+import carDealer.listeners.SessionCounter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -31,18 +31,18 @@ public class ControllerServlet extends HttpServlet {
         }
         pw.println("!</H3>");
         pw.println("<a href=\"makeForm.jsp\">Marka</a><br><br>");
-        pw.println("<a href=\"userForm.jsp\">Utwórz użytkownika</a><br><br>");
-        pw.print("<h5>Liczba aktywnych użytkowników: " + SessionCounter.getCounter());
+        pw.println("<a href=\"userForm.jsp\">Make user</a><br><br>");
+        pw.print("<h5>Active users number: " + SessionCounter.getCounter());
         pw.println("</h5><br><br>");
         Object counter = getServletContext().getAttribute("savedClientsCounter");
         if (counter == null) {
-            pw.println("Nie ma dodanych żadnych użytkowników");
+            pw.println("No users");
         } else {
-            pw.println("Dodano: " + counter.toString() + " użytkowników");
+            pw.println("Added: " + counter.toString() + " users");
         }
         pw.println("<br><br>");
-        String email = this.getServletContext().getInitParameter("adres_email_tworcy");
-        pw.println("Adres e-mail twórcy strony: " + email);
+        String email = this.getServletContext().getInitParameter("email");
+        pw.println("e-mail: " + email);
         pw.println("</BODY></HTML>");
     }
 }

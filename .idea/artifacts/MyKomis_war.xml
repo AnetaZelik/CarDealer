@@ -7,7 +7,7 @@
         <packaging>war</packaging>
       </options>
     </properties>
-    <root id="archive" name="Komis.war">
+    <root id="archive" name="CarDealer.war">
       <element id="artifact" artifact-name="MyKomis:war exploded" />
     </root>
   </artifact>

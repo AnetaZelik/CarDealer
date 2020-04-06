@@ -1,4 +1,4 @@
-package pl.altkom.web.servlets;
+package carDealer.servlets;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -14,7 +14,7 @@ public class RedirectServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ServletContext context = getServletContext();
-        String make = req.getParameter("marka");
+        String make = req.getParameter("make");
         System.out.println(make);
         if (make.equals("Opel")) {
             resp.sendRedirect("http://opel.pl");

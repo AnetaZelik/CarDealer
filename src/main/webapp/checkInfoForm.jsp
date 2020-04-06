@@ -6,44 +6,46 @@
 </head>
 <body>
 
-<jsp:useBean id="autko" class="pl.altkom.web.CarBean" scope="session"/>
-<%--<jsp:setProperty name="autko" property="make"/>--%>
-<%--<jsp:setProperty name="autko" property="type"/>--%>
-<%--<jsp:setProperty name="autko" property="year"/>--%>
-<%--<jsp:setProperty name="autko" property="distance"/>--%>
-<%--<jsp:setProperty name="autko" property="capacity"/>--%>
+<jsp:useBean id="autko" class="carDealer.CarBean" scope="session"/>
+<%--<jsp:setProperty name="car" property="make"/>--%>
+<%--<jsp:setProperty name="car" property="type"/>--%>
+<%--<jsp:setProperty name="car" property="year"/>--%>
+<%--<jsp:setProperty name="car" property="distance"/>--%>
+<%--<jsp:setProperty name="car" property="capacity"/>--%>
 
-<jsp:setProperty name="autko" property="*" />
+<jsp:setProperty name="car" property="*"/>
 
 <table>
     <tr>
-        <td>Marka</td>
-        <td><c:out value="${autko.make}" /></td>
+        <td>Make</td>
+        <td><c:out value="${car.make}"/></td>
     </tr>
     <tr>
-        <td>Typ</td>
-        <td><jsp:getProperty name="autko" property="type"/></td>
+        <td>Type</td>
+        <td>
+            <jsp:getProperty name="car" property="type"/>
+        </td>
     </tr>
     <tr>
-        <td>Rok produkcji</td>
-        <td><c:out value="${autko.year}"/></td>
+        <td>Production year</td>
+        <td><c:out value="${car.year}"/></td>
     </tr>
     <tr>
-        <td>Przebieg</td>
-        <td><c:out value="${autko.distance}"/></td>
+        <td>Distance</td>
+        <td><c:out value="${car.distance}"/></td>
     </tr>
     <tr>
-        <td>Pojemność</td>
-        <td><c:out value="${autko.capacity}"/></td>
+        <td>Capacity</td>
+        <td><c:out value="${car.capacity}"/></td>
     </tr>
 </table>
 <form action="carInfoForm.jsp">
-    <input type="submit" value="Edytuj">
+    <input type="submit" value="Edit">
 </form>
 <form action="add_car_info">
-    <input type="submit" value="Zapisz samochód">
+    <input type="submit" value="Save car">
 </form>
 
-<%@include file="footer.html"%>
+<%@include file="footer.html" %>
 </body>
 </html>

@@ -1,4 +1,4 @@
-package pl.altkom.web;
+package carDealer;
 
 public class CarBean {
     private int id;

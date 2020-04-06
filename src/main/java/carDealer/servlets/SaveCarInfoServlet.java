@@ -1,8 +1,8 @@
-package pl.altkom.web.servlets;
+package carDealer.servlets;
 
-import pl.altkom.web.CarBean;
-import pl.altkom.web.dao.CarInfoDAO;
-import pl.altkom.web.dao.CarInfoDAOImpl;
+import carDealer.CarBean;
+import carDealer.dao.CarInfoDAO;
+import carDealer.dao.CarInfoDAOImpl;
 
 import javax.annotation.Resource;
 import javax.servlet.ServletException;
@@ -15,17 +15,16 @@ import java.io.IOException;
 
 @WebServlet("/add_car_info")
 public class SaveCarInfoServlet extends HttpServlet {
-    @Resource(name = "jdbc:komis")
+    @Resource(name = "jdbc:carDealer")
     private DataSource dataSource;
+
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        // logika zapisywania auta
-
-        CarBean car = (CarBean) req.getSession().getAttribute("autko");
+        CarBean car = (CarBean) req.getSession().getAttribute("car");
         CarInfoDAO dao = new CarInfoDAOImpl();
         dao.saveCarInfo(car, dataSource);
-        req.getSession().removeAttribute("autko");
+        req.getSession().removeAttribute("car");
 
         req.getRequestDispatcher("redirect").forward(req, resp);
     }

@@ -1,7 +1,7 @@
-package pl.altkom.web.servlets;
+package carDealer.servlets;
 
-import pl.altkom.web.dao.ClientDataDAO;
-import pl.altkom.web.dao.ClientDataDAOImpl;
+import carDealer.dao.ClientDataDAO;
+import carDealer.dao.ClientDataDAOImpl;
 
 import javax.annotation.Resource;
 import javax.servlet.ServletException;
@@ -14,8 +14,9 @@ import java.io.IOException;
 
 @WebServlet(urlPatterns = "/delete_user_by_id")
 public class DeleteClientById extends HttpServlet {
-    @Resource(name = "jdbc:komis")
+    @Resource(name = "jdbc:carDealer")
     private DataSource dataSource;
+
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String parameter = req.getParameter("id");

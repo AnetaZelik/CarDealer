@@ -1,11 +1,9 @@
-package pl.altkom.web.filters;
+package carDealer.filters;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.time.LocalDate;
-import java.util.Locale;
 
 @WebFilter(urlPatterns = "/hello")
 public class SimpleFilter implements Filter {

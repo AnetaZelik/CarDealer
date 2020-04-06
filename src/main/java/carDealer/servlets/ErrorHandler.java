@@ -1,4 +1,4 @@
-package pl.altkom.web.servlets;
+package carDealer.servlets;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,7 +19,7 @@ public class ErrorHandler extends HttpServlet {
         pw.println("</HEAD><BODY>");
         pw.println("<H3>ERROR</H3>");
         pw.println(req.getAttribute("javax.servlet.error.message"));
-        getServletContext().log("HAHAHAHAH DUPA");
+        getServletContext().log("message");
         getServletContext().log(req.getAttributeNames().toString());
         pw.println("</BODY></HTML>");
     }

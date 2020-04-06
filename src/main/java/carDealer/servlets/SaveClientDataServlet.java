@@ -1,8 +1,8 @@
-package pl.altkom.web.servlets;
+package carDealer.servlets;
 
-import pl.altkom.web.Client;
-import pl.altkom.web.dao.ClientDataDAO;
-import pl.altkom.web.dao.ClientDataDAOImpl;
+import carDealer.Client;
+import carDealer.dao.ClientDataDAO;
+import carDealer.dao.ClientDataDAOImpl;
 
 import javax.annotation.Resource;
 import javax.servlet.ServletException;
@@ -17,7 +17,7 @@ import java.io.PrintWriter;
 @WebServlet(urlPatterns = "/add_user")
 public class SaveClientDataServlet extends HttpServlet {
 
-    @Resource(name="jdbc:komis")
+    @Resource(name="jdbc:carDealer")
     private DataSource ds;
 
     @Override
@@ -34,17 +34,17 @@ public class SaveClientDataServlet extends HttpServlet {
         ClientDataDAO dao = new ClientDataDAOImpl();
         try {
             dao.saveClientData(client, ds);
-            req.setAttribute("bla bla", client);
+            req.setAttribute("sampleString", client);
         } catch (Exception e) {
             e.printStackTrace();
-            throw new ServletException("Błąd", e);
+            throw new ServletException("Error", e);
         }
 
         PrintWriter out = resp.getWriter();
-        out.println("<html><head><title>SUKCES</title></head>");
+        out.println("<html><head><title>success</title></head>");
         out.println("<body>");
-        out.println("<h1>Udało Ci się dodać użytkownika!!!</h1>");
-        out.println("<a href=\"userForm.jsp\">Dodaj kolejnego użytkownika</a>");
+        out.println("<h1>The user has been added!</h1>");
+        out.println("<a href=\"userForm.jsp\">Add next user</a>");
         out.println("</body></html>");
 
     }

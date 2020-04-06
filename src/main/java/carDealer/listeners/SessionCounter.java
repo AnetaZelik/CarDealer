@@ -1,4 +1,4 @@
-package pl.altkom.web.listeners;
+package carDealer.listeners;
 
 import javax.servlet.annotation.WebListener;
 import javax.servlet.http.HttpSessionEvent;

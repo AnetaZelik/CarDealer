@@ -6,22 +6,22 @@
   <display-name>Archetype Created Web Application</display-name>
 
   <context-param>
-    <param-name>adres_email_tworcy</param-name>
-    <param-value>pawel.bogdan1@gmail.com</param-value>
+    <param-name>email</param-name>
+    <param-value>aneta.zelik"yahoo.com</param-value>
   </context-param>
 
   <context-param>
     <param-name>dataSource</param-name>
-    <param-value>jdbc:komis</param-value>
+    <param-value>jdbc:carDealer</param-value>
   </context-param>
 
 <!--  <login-config>-->
 <!--    <auth-method>BASIC</auth-method>-->
-<!--    <realm-name>Komis</realm-name>-->
+<!--    <realm-name>carDealer</realm-name>-->
 <!--  </login-config>-->
 <!--  -->
 <!--  <security-constraint>-->
-<!--    <display-name>Strona hello</display-name>-->
+<!--    <display-name>hello</display-name>-->
 
 <!--    <web-resource-collection>-->
 <!--      <web-resource-name>hello</web-resource-name>-->

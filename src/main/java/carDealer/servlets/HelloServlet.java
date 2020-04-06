@@ -1,4 +1,4 @@
-package pl.altkom.web.servlets;
+package carDealer.servlets;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,6 +14,6 @@ public class HelloServlet extends HttpServlet {
                         HttpServletResponse response)
             throws IOException {
         PrintWriter pw = response.getWriter();
-        pw.println("<H3>Hello Paweł!</H3>");
+        pw.println("<H3>Hello!</H3>");
     }
 }

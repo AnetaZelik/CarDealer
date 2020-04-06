@@ -1,4 +1,4 @@
-package pl.altkom.web.listeners;
+package carDealer.listeners;
 
 import javax.servlet.ServletRequestAttributeEvent;
 import javax.servlet.ServletRequestAttributeListener;
@@ -8,7 +8,7 @@ import javax.servlet.annotation.WebListener;
 public class SavedClientListener implements ServletRequestAttributeListener {
     @Override
     public void attributeAdded(ServletRequestAttributeEvent servletRequestAttributeEvent) {
-        if (servletRequestAttributeEvent.getName().equals("bla bla")) {
+        if (servletRequestAttributeEvent.getName().equals("sampleMsg")) {
             Object counter = servletRequestAttributeEvent
                     .getServletContext()
                     .getAttribute("savedClientsCounter");

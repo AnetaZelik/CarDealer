@@ -1,8 +1,7 @@
-package pl.altkom.web.servlets;
+package carDealer.servlets;
 
-import pl.altkom.web.Client;
-import pl.altkom.web.dao.ClientDataDAO;
-import pl.altkom.web.dao.ClientDataDAOImpl;
+import carDealer.dao.ClientDataDAO;
+import carDealer.dao.ClientDataDAOImpl;
 
 import javax.annotation.Resource;
 import javax.servlet.ServletException;
@@ -18,12 +17,12 @@ import java.util.List;
 @WebServlet(urlPatterns = "/read_users")
 public class ReadClientDataServlet extends HttpServlet {
 
-    @Resource(name="jdbc:komis")
+    @Resource(name = "jdbc:carDealer")
     private DataSource ds;
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         PrintWriter pw = resp.getWriter();
-//        pw.println("Tutaj będą się wyświetlać użytkownicy");
         try {
             ClientDataDAO dao = new ClientDataDAOImpl();
             List clients = dao.readClientsData(ds);

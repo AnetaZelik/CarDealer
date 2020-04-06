@@ -11,7 +11,7 @@
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="MyKomis" />
+          <element id="module-output" name="CarDealer" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: org.xerial:sqlite-jdbc:3.28.0" />
@@ -20,7 +20,7 @@
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/target/Komis/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="MyKomis/web/Web" />
+      <element id="javaee-facet-resources" facet="CarDealer/web/Web" />
     </root>
   </artifact>
 </component>
